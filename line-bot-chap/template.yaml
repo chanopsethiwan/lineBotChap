@@ -15,19 +15,16 @@ Resources:
     Type: AWS::Serverless::Function 
     Properties:
       CodeUri: lineBot/
-      Handler: app.lambda_handler
+      Handler: app.answer
       Runtime: python3.8
       Events:
-        HelloWorld:
+        Reply:
           Type: Api 
           Properties:
             Path: /hello
             Method: post
 
 Outputs:
-  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
-  # Find out more about other implicit resources you can reference within SAM
-  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   HelloWorldApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
