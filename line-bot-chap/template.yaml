@@ -21,11 +21,11 @@ Resources:
         Reply:
           Type: Api 
           Properties:
-            Path: /reply
+            Path: /linereply
             Method: post
 
 Outputs:
   ApiEndpoint:
     Description: "API endpoint"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/reply/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/linereply/"
 
