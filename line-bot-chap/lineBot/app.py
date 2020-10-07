@@ -14,7 +14,7 @@ def reply(accessToken, replyToken):
     "messages":[
         {
             "type":"text",
-            "text":"rwgenerated"
+            "text":rwgenerated
         }
     ]}
     return post(url = url, headers = headers, data = data)
