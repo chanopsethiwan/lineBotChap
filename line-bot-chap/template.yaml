@@ -17,15 +17,18 @@ Resources:
       CodeUri: lineBot/
       Handler: app.answer
       Runtime: python3.8
+      Environment:
+          Variables:
+              ACCESS_TOKEN: 
       Events:
         Reply:
           Type: Api 
           Properties:
-            Path: /linereply
+            Path: /hello
             Method: post
 
 Outputs:
   ApiEndpoint:
     Description: "API endpoint"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/linereply/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
 

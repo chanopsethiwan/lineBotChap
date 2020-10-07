@@ -1,3 +1,2 @@
 requests
-line-bot-sdk
 Random-Word-Generator
