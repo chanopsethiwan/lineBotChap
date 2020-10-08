@@ -4,6 +4,7 @@ from requests import post
 
 rw = RandomWord(max_word_size = 6)
 rwgenerated = rw.generate()
+rwgeneratedupper = rwgenerated.upper()
 accessToken = os.environ['ACCESS TOKEN']
 
 def reply(accessToken, replyToken):
@@ -14,7 +15,7 @@ def reply(accessToken, replyToken):
     "messages":[
         {
             "type":"text",
-            "text":rwgenerated
+            "text":rwgeneratedupper
         }
     ]}
     return post(url = url, headers = headers, data = data)
@@ -23,8 +24,6 @@ def answer(event, context):
     lineWebhookObject = json.loads(event['body'])
     replyToken = lineWebhookObject['events'][0]['replyToken']
     message = reply(accessToken, replyToken)
-
-
     return {
         "statusCode": 200,
         "body": json.dumps({
