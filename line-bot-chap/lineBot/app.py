@@ -9,7 +9,7 @@ accessToken = os.environ['ACCESS TOKEN']
 
 def reply(accessToken, replyToken):
     url = 'https://api.line.me/v2/bot/message/reply'
-    headers = {Authorization: 'Bearer '+ accessToken}
+    headers = {'Authorization': 'Bearer '+ accessToken}
     data = {
     "replyToken":replyToken,
     "messages":[
@@ -27,6 +27,6 @@ def answer(event, context):
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": message,
+            "message": message.json(),
         }),
     }
