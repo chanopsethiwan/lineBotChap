@@ -20,11 +20,14 @@ def reply(accessToken, replyToken):
     return post(url = url, headers = headers, data = data)
 
 def answer(event, context):
+    lineWebhookObject = json.loads(event['body'])
+    replyToken = lineWebhookObject['events'][0]['replyToken']
+    message = reply(accessToken, replyToken)
 
 
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "hello world",
+            "message": message,
         }),
     }
