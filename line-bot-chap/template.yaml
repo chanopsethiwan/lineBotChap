@@ -18,8 +18,8 @@ Resources:
       Handler: app.answer
       Runtime: python3.8
       Environment:
-          Variables:
-              ACCESS_TOKEN: !Ref LineKey
+        Variables:
+          ACCESS_TOKEN: !Ref LineKey
       Events:
         Reply:
           Type: Api 
