@@ -9,6 +9,11 @@ Description: >
 Globals:
   Function:
     Timeout: 3
+    
+Parameters:
+    LineKey: 
+        Type: String
+        Default: 'youForgotMe'
 
 Resources:
   ReplyFunction:

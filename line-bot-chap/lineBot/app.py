@@ -5,7 +5,7 @@ from requests import post
 rw = RandomWord(max_word_size = 6)
 rwgenerated = rw.generate()
 rwgeneratedupper = rwgenerated.upper()
-accessToken = os.environ['ACCESS TOKEN']
+accessToken = os.environ['ACCESS_TOKEN']
 
 def reply(accessToken, replyToken):
     url = 'https://api.line.me/v2/bot/message/reply'
