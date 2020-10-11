@@ -36,4 +36,3 @@ Outputs:
   ApiEndpoint:
     Description: "API endpoint"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-
