@@ -16,6 +16,11 @@ Parameters:
         Default: 'youForgotMe'
 
 Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: Trained-Bot
   ReplyFunction:
     Type: AWS::Serverless::Function 
     Properties:
