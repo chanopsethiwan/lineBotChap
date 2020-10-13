@@ -3,8 +3,16 @@ import json, os, logging
 from requests import post
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
+import pickle
+from s3bz.s3bz import S3
 
 accessToken = os.environ['ACCESS_TOKEN']
+pickleChatBotDict = S3.loads(
+key = "chatBotTrained",
+bucket = 'Trained-Bot'
+)
+pickleChatBot = pickleChatBotDict['pickleChatBot']
+chatbot = pickle.loads(pickleChatBot)
 
 def reply(accessToken, replyToken, text):
 #     rw = RandomWord(max_word_size = 6)
