@@ -1,5 +1,4 @@
 requests
 Random-Word-Generator
 ChatterBot
-pickle
 s3bz
