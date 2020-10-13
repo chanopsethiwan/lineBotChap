@@ -1,22 +1,10 @@
 import json, os, logging
-from RandomWordGenerator import RandomWord
+#from RandomWordGenerator import RandomWord
 from requests import post
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 accessToken = os.environ['ACCESS_TOKEN']
-chatbot = ChatBot("lineBotChap")
-conversation = [
-    "Hi",
-    "Hello",
-    "How are you doing?",
-    "I'm doing great",
-    "Thank you",
-    "You're welcome"
-]
-
-trainer = ListTrainer(chatbot)
-trainer.train(conversation)
 
 def reply(accessToken, replyToken, text):
 #     rw = RandomWord(max_word_size = 6)
