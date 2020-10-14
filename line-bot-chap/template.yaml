@@ -9,6 +9,8 @@ Description: >
 Globals:
   Function:
     Timeout: 3
+    Layers:
+      - arn:aws:lambda:ap-southeast-1:394922924679:layer:chatterbot-layer:1
     
 Parameters:
     LineKey: 
