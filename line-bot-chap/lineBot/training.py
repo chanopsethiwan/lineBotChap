@@ -21,5 +21,5 @@ pickleChatbotDict = {"pickleChatbot": pickleChatbot}
 S3.save(
 key = 'chatBotTrained',
 objectToSave = pickleChatbotDict,
-bucket = 'Trained-Bot'
+bucket = 'trained-bot'
 )

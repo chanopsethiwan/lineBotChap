@@ -22,7 +22,7 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
     Properties:
-      BucketName: Trained-Bot
+      BucketName: trained-bot
   ReplyFunction:
     Type: AWS::Serverless::Function 
     Properties:
