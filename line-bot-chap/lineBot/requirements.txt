@@ -1,4 +1,3 @@
 requests
 Random-Word-Generator
-ChatterBot
 s3bz
