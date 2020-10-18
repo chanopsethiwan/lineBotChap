@@ -1,5 +1,4 @@
 import json, os, logging
-#from RandomWordGenerator import RandomWord
 from requests import post
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -15,9 +14,6 @@ pickleChatBot = pickleChatBotDict['pickleChatBot']
 chatbot = pickle.loads(pickleChatBot)
 
 def reply(accessToken, replyToken, text):
-#     rw = RandomWord(max_word_size = 6)
-#     rwgenerated = rw.generate()
-#     rwgeneratedupper = rwgenerated.upper()
     response = chatbot.get_response(text)
     url = 'https://api.line.me/v2/bot/message/reply'
     headers = {'Authorization': 'Bearer '+ accessToken}
