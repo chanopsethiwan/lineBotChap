@@ -1,1 +1,4 @@
 .line
+
+*.zip
+**python/

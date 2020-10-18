@@ -7,5 +7,5 @@ s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-f9z92q7pr0wt"
 s3_prefix = "LineBotChap"
 region = "us-east-1"
 profile = "chap"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"

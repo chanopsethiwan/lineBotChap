@@ -10,7 +10,8 @@ Globals:
   Function:
     Timeout: 3
     Layers:
-      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-spacy:28
+      - !Ref Chatterbot
+      - !Ref Corpus
     
 Parameters:
     LineKey: 
@@ -38,6 +39,26 @@ Resources:
           Properties:
             Path: /hello
             Method: post
+  Chatterbot:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: chatterbot-layer
+      ContentUri: chatterbot/package.zip
+      CompatibleRuntimes:
+        - python3.8
+  Corpus:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: corpus-layer
+      ContentUri: corpus/package.zip
+      CompatibleRuntimes:
+        - python3.8
+  ChatterbotLayerPermission:
+    Type: AWS::Lambda::LayerVersionPermission
+    Properties:
+      Action: lambda:GetLayerVersion
+      LayerVersionArn: !Ref Chatterbot
+      Principal: "*"
 
 Outputs:
   ApiEndpoint:
