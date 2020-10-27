@@ -10,8 +10,10 @@ Globals:
   Function:
     Timeout: 3
     Layers:
-      - !Ref Chatterbot
-      - !Ref Corpus
+      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-pymongo:4
+      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-nltk:16
+      - arn:aws:lambda:us-east-1:277726656832:layer:chatterbot:4
+      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-spacy:28
     
 Parameters:
     LineKey: 
@@ -24,6 +26,8 @@ Resources:
     DeletionPolicy: Retain
     Properties:
       BucketName: trained-bot
+      AccelerateConfiguration:
+         AccelerationStatus: Enabled
   ReplyFunction:
     Type: AWS::Serverless::Function 
     Properties:
@@ -39,26 +43,6 @@ Resources:
           Properties:
             Path: /hello
             Method: post
-  Chatterbot:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      LayerName: chatterbot-layer
-      ContentUri: chatterbot/package.zip
-      CompatibleRuntimes:
-        - python3.8
-  Corpus:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      LayerName: corpus-layer
-      ContentUri: corpus/package.zip
-      CompatibleRuntimes:
-        - python3.8
-  ChatterbotLayerPermission:
-    Type: AWS::Lambda::LayerVersionPermission
-    Properties:
-      Action: lambda:GetLayerVersion
-      LayerVersionArn: !Ref Chatterbot
-      Principal: "*"
 
 Outputs:
   ApiEndpoint:
