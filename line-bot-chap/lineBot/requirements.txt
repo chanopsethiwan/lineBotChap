@@ -1,2 +1,6 @@
 requests
 s3bz
+pyyaml
+pytz
+pint
+mathparse
