@@ -10,7 +10,7 @@ pickleChatbotDict = S3.load(
 key = "chatBotTrained",
 bucket = 'trained-bot'
 )
-pickleChatbot = pickleChatbotDict['pickleChatBot']
+pickleChatbot = pickleChatbotDict['pickleChatbot']
 chatbot = pickle.loads(pickleChatBot)
 
 def reply(accessToken, replyToken, text):
