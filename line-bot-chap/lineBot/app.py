@@ -6,7 +6,7 @@ import pickle
 from s3bz.s3bz import S3
 
 accessToken = os.environ['ACCESS_TOKEN']
-pickleChatBotDict = S3.load(
+pickleChatbotDict = S3.load(
 key = "chatBotTrained",
 bucket = 'trained-bot'
 )
