@@ -10,12 +10,7 @@ Globals:
   Function:
     Timeout: 60
     Layers:
-      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-pymongo:4
-      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-nltk:16
-      # - arn:aws:lambda:us-east-1:277726656832:layer:chatterbot:4
-      - arn:aws:lambda:us-east-1:277726656832:layer:corpus-layer:2
-      - arn:aws:lambda:us-east-1:277726656832:layer:chatterbot:1
-      - arn:aws:lambda:us-east-1:770693421928:layer:Klayers-python38-spacy:28
+      - arn:aws:lambda:us-east-1:394922924679:layer:ChatterBot-layer:1
     
 Parameters:
     LineKey: 
